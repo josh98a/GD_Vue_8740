@@ -25,41 +25,44 @@
   </span>
 </p>
 
-  <p v-show="wanita.skills">Kemampuanku adalah : </p>
-  <ul v-for="(skill, index) in wanita.skills" :key="index">
-   <li>{{skill}}</li>
-  </ul>
- </div>
 
 <div>
- <button @click="KurangiUmur">Kurangi umurku</button>
- <button @click="tambahUmur">Tambah umurku</button>
-</div>
+  <button @click="kurangiUmur">Kurangi umurku</button>
+  <button @click="tambahUmur">Tambah umurku</button>
+ </div>
+
+  <p v-show="wanita.skills">Kemampuanku adalah : </p>
+  <ul v-for="skill in wanita.skills" :key="skill">
+   <li>{{skill}}</li>
+  </ul>
+
+ </div>
 </body>
 
 <script>
  new Vue({
- el: '#app',
+ el: "#app",
  data: {
- wanita:{
-  nama: "karen",
-  umur: 20,
-  pekerjaan: "programmer",
-  skills: [
-    "mencuci piring",
-    "coding"
-  ],
-  status: "belum menikah" ,
- },
+  wanita: {
+    nama: 'Karen',
+    umur: 20,
+    pekerjaan: 'programmer',
+    skills: [
+      "mencuci piring",
+      "coding"
+    ],
+    status: 'belum menikah'
+ }
 },
 methods:{
- tambahUmur() {
-  this.wanita.umur++;
-},
- kurangiUmur() {
-  this.wanita.umur--;
+  tambahUmur() {
+    this.wanita.umur++;
+  },
+  kurangiUmur() {
+    this.wanita.umur--;
+  },
 },
 
-}
+});
 </script>
 </html>
